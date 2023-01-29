@@ -30,9 +30,9 @@ public class Target : NetworkBehaviour
     [ClientRpc]
     private void RpcHitAnimation()
     {
-        if (blockAnim)
-            blockAnim = false;
-        else
+        if (!blockAnim)
             animator.SetTrigger("hit");
+
+        blockAnim = false;
     }
 }
